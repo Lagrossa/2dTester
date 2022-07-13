@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2989870390546886241}
   m_Layer: 0
   m_Name: Point Light 2D
-  m_TagString: Untagged
+  m_TagString: Shot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,7 +177,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &879945201138401563
 BoxCollider2D:
@@ -217,5 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22fd53c6a7534f459b477d12de2ab74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bCollider: {fileID: 879945201138401563}
+  bCollider: {fileID: 0}
   shotCollider: {fileID: 0}
+  timeSpawned: 0
+  durationAlive: 5

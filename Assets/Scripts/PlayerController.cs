@@ -11,12 +11,18 @@ public class PlayerController : MonoBehaviour
     public bool dead;
     public Staff staffAction;
     public float atkTime;
+    public Transform mouseTest;
+    public Camera cam;
+    //Testing
+
     private void Start()
     {
         staffAction = gameObject.GetComponentInChildren<Staff>();
     }
     void Update()
     {
+        cam.transform.position = new Vector3(transform.position.x, transform.position.y, cam.transform.position.z);
+        mouseTest.position = Camera.main.ScreenToWorldPoint(Input.mousePosition).normalized;
         if (!dead)
         {
             // ----------------------- Inputs ----------------------- //
@@ -46,5 +52,10 @@ public class PlayerController : MonoBehaviour
                 staffAction.Fire(Camera.main.ScreenToWorldPoint(Input.mousePosition).normalized);
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
 }
