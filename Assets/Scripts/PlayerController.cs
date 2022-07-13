@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetMouseButton(0) && Time.time - atkTime > PlayerStats.atkSpd)
             {
                 atkTime = Time.time;
-                staffAction.Fire(Camera.main.ScreenToWorldPoint(Input.mousePosition).normalized);
+                staffAction.Fire(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             }
         }
     }
