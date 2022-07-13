@@ -8,10 +8,9 @@ public class PlayerController : MonoBehaviour
     Vector2 movement;
     public Vector2 mousePos;
     public GameObject staff;
-    public GameObject spawnPoint;
     public bool dead;
     public Staff staffAction;
-
+    public float atkTime;
     private void Start()
     {
         staffAction = gameObject.GetComponentInChildren<Staff>();
@@ -41,9 +40,10 @@ public class PlayerController : MonoBehaviour
 
             // ----------------------- Shooting ----------------------- //
 
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && Time.time - atkTime > PlayerStats.atkSpd)
             {
-                staffAction.Fire(mousePos);
+                atkTime = Time.time;
+                staffAction.Fire(Camera.main.ScreenToWorldPoint(Input.mousePosition).normalized);
             }
         }
     }

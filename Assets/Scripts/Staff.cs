@@ -6,6 +6,7 @@ public class Staff : MonoBehaviour
 {
     public GameObject shot;
     public float forceMultiplier;
+    public Transform spawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class Staff : MonoBehaviour
     public void Fire(Vector2 mouseDirection)
     {
         GameObject thisShot = Instantiate<GameObject>(shot);
+        thisShot.transform.position = spawnPoint.position;
         thisShot.GetComponent<Rigidbody2D>().AddForce(mouseDirection * forceMultiplier);
     }
 }
