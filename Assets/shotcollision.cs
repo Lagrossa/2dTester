@@ -18,7 +18,7 @@ public class shotcollision : MonoBehaviour
     {
         if (Time.time - timeSpawned > durationAlive)
         {
-            GameObject.Destroy(gameObject);
+            DestroyShot();
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,7 +33,15 @@ public class shotcollision : MonoBehaviour
         else
         {
             Debug.Log(collision.gameObject.tag);
-            GameObject.Destroy(gameObject);
+            DestroyShot();
         }
+    }
+
+    void DestroyShot()
+    {
+        gameObject.GetComponent<ParticleSystem>().Play();
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        
+        Destroy(gameObject, 3f);
     }
 }
