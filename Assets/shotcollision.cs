@@ -23,6 +23,7 @@ public class shotcollision : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Physics2D.IgnoreLayerCollision(0, 3);
         if (collision.gameObject.tag != "Enemy")
         {
             //ignore collisions between shot and player

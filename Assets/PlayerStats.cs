@@ -9,7 +9,7 @@ public class PlayerStats : MonoBehaviour
     public static float health;
     public static float speed;
     public static float maxHealth;
-    public static float atkSpd;
+    public static float atkSpd = .5f;
     public static float gold;
 
     private void Start()
@@ -18,7 +18,6 @@ public class PlayerStats : MonoBehaviour
         maxHealth = 10;
         speed = 1;
         health = maxHealth;
-        atkSpd = .5f;
         gold = 0;
     }
 

@@ -26,18 +26,19 @@ public class Staff : MonoBehaviour
         
     }
 
-    public void Fire(Vector2 mouseDirection)
+    public void Fire(Vector3 mouseDirection, Vector3 offset)
     {
         mousePost = mouseDirection;
 
-        GameObject thisShot = Instantiate<GameObject>(shot);
-        thisShot.transform.position = spawnPoint.position;
-        thisShot.GetComponent<Rigidbody2D>().AddForce(mouseDirection.normalized * forceMultiplier);
+        GameObject thisShot = Instantiate<GameObject>(shot, spawnPoint.position, spawnPoint.rotation);
+        thisShot.GetComponent<Rigidbody2D>().AddForce(spawnPoint.up * forceMultiplier, ForceMode2D.Impulse);
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(spawnPoint.position, mousePost.normalized * forceMultiplier);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(spawnPoint.position, mousePost);
     }
 }

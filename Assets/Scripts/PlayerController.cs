@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool dead;
     public Staff staffAction;
     public float atkTime;
+    public float acTime;
     public Transform mouseTest;
     public Camera cam;
     //Testing
@@ -21,8 +22,9 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        acTime = Time.time;
         cam.transform.position = new Vector3(transform.position.x, transform.position.y, cam.transform.position.z);
-        mouseTest.position = Camera.main.ScreenToWorldPoint(Input.mousePosition).normalized;
+        mouseTest.position = Camera.main.ScreenToWorldPoint(Input.mousePosition).normalized + transform.position;
         if (!dead)
         {
             // ----------------------- Inputs ----------------------- //
@@ -48,8 +50,9 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetMouseButton(0) && Time.time - atkTime > PlayerStats.atkSpd)
             {
+                Debug.Log($"{PlayerStats.atkSpd} is less than... {Time.time - atkTime}");
                 atkTime = Time.time;
-                staffAction.Fire(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                staffAction.Fire(Camera.main.ScreenToWorldPoint(Input.mousePosition).normalized, transform.position);
             }
         }
     }
@@ -57,5 +60,7 @@ public class PlayerController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(Vector3.zero, Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
 }
