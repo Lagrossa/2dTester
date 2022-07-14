@@ -8,6 +8,7 @@ public class shotcollision : MonoBehaviour
     public Collider shotCollider;
     public float timeSpawned;
     public float durationAlive;
+    public ParticleSystem burn;
     private void Start()
     {
         timeSpawned = Time.time;
@@ -39,9 +40,14 @@ public class shotcollision : MonoBehaviour
 
     void DestroyShot()
     {
-        gameObject.GetComponent<ParticleSystem>().Play();
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        
-        Destroy(gameObject, 3f);
+        burn.Play();
+        Destroy(gameObject.GetComponent<SpriteRenderer>());
+        Destroy(gameObject.GetComponent<Rigidbody2D>());
+        Invoke(nameof(DestroyObject), 5f);
+    }
+
+    void DestroyObject()
+    {
+        Destroy(gameObject);
     }
 }
