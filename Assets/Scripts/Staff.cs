@@ -26,10 +26,8 @@ public class Staff : MonoBehaviour
         
     }
 
-    public void Fire(Vector3 mouseDirection, Vector3 offset)
+    public void Fire()
     {
-        mousePost = mouseDirection;
-
         GameObject thisShot = Instantiate<GameObject>(shot, spawnPoint.position, spawnPoint.rotation);
         thisShot.GetComponent<Rigidbody2D>().AddForce(spawnPoint.up * forceMultiplier, ForceMode2D.Impulse);
     }

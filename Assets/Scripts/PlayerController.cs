@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log($"{PlayerStats.atkSpd} is less than... {Time.time - atkTime}");
                 atkTime = Time.time;
-                staffAction.Fire(Camera.main.ScreenToWorldPoint(Input.mousePosition).normalized, transform.position);
+                staffAction.Fire();
             }
         }
     }
