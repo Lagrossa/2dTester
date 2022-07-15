@@ -379,7 +379,7 @@ MonoBehaviour:
   staffAction: {fileID: 0}
   atkTime: 0
   acTime: 0
-  mouseTest: {fileID: 1927958490}
+  mouseTest: {fileID: 0}
   cam: {fileID: 963194227}
 --- !u!114 &637192263
 MonoBehaviour:
@@ -5154,37 +5154,7 @@ Transform:
   - {fileID: 1893376057}
   - {fileID: 740286611}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1927958489
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1927958490}
-  m_Layer: 0
-  m_Name: mouseTest
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1927958490
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1927958489}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.103, y: 0.324, z: -2.6627383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1945285014
 GameObject:
@@ -7328,7 +7298,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1684142407177400540, guid: 47acc629a6754e84ca3ec7f5dc4e739e, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1684142407177400540, guid: 47acc629a6754e84ca3ec7f5dc4e739e, type: 3}
       propertyPath: m_LocalPosition.x
