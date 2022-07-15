@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetMouseButton(0) && Time.time - atkTime > PlayerStats.atkSpd)
             {
-                Debug.Log($"{PlayerStats.atkSpd} is less than... {Time.time - atkTime}");
+                //Debug.Log($"{PlayerStats.atkSpd} is less than... {Time.time - atkTime}");
                 atkTime = Time.time;
                 staffAction.Fire();
             }

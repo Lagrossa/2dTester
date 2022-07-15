@@ -9,12 +9,19 @@ public class Enemy : Damagable
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision != null && collision.gameObject.tag == "Player")
+        if(collision != null)
         {
-            PlayerStats playerref = collision.gameObject.GetComponent<PlayerStats>();
-            playerref.TakeDamage(health);
+            if (collision.gameObject.tag == "Player")
+            {
+                PlayerStats playerref = collision.gameObject.GetComponent<PlayerStats>();
+                playerref.TakeDamage(health);
+            }
+            else if(collision.gameObject.tag == "Shot")
+            {
+                TakeDamage(collision.gameObject.GetComponent<shotcollision>().damage);
+            }
         }
     }
 }
