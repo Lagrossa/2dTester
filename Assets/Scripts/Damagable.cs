@@ -5,11 +5,12 @@ using UnityEngine;
 public abstract class Damagable : MonoBehaviour
 {
     [SerializeField]
-    private int maxHealth;
+    protected int maxHealth;
+    protected int health;
 
-    private int health;
+    //Health bar reference
 
-    private void Start()
+    private void Awake()
     {
         health = maxHealth;
     }
@@ -23,4 +24,6 @@ public abstract class Damagable : MonoBehaviour
     }
 
     public abstract void Despawn(GameObject gameObject);
+
+    //health bar update-r
 }
