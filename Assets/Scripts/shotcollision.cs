@@ -25,7 +25,7 @@ public class shotcollision : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Physics2D.IgnoreLayerCollision(0, 3);
-        if (collision.gameObject.tag != "Enemy" && collision.gameObject.tag != "Wall")
+        if (collision.gameObject.tag != "Damagable" && collision.gameObject.tag != "Wall")
         {
             //ignore collisions between shot and player
             Debug.Log(collision.gameObject.tag + " Collision ignored");
