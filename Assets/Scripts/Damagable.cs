@@ -6,7 +6,7 @@ public abstract class Damagable : MonoBehaviour
 {
     [SerializeField]
     protected int maxHealth;
-    protected int health;
+    public int health;
 
     //Health bar reference
 
